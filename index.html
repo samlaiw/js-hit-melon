@@ -1,7 +1,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <style>
     body {
-        background: url(./0510/0001153663.jpg);
+        background: url(./0510/beach.jpg);
         background-size: cover;
 
     }
@@ -29,8 +29,8 @@
     }
 
     #start {
-        border: 0;
-        background-color: lightblue;
+        border: 您的分數;
+        background-color: rgb(71, 179, 71);
         color: #fff;
         border-radius: 10px;
         cursor: pointer;
@@ -48,30 +48,31 @@
 
     #score {
         font-size: 50px;
-        font-family: 'Gugi', cursive;
+        font-family: 'Microsoft JhengHei';
+        font-weight: bolder;
         text-align: center;
 
     }
 
     #timeleft {
         font-size: 50px;
-        font-family: 'Gugi', cursive;
-
+        font-family: 'Microsoft JhengHei';
+        font-weight: bolder;
     }
 
     #time {
         font-size: 50px;
-        font-family: 'Noto Sans TC', sans-serif;
-
+        font-family: 'Microsoft JhengHei';
+        font-weight: bolder;
     }
 
     body {
         /* url(圖檔路徑) 座標中心點, auto*/
-        cursor: url(./0510/dick.png) 25 25, auto;
+        cursor: url(./0510/stick.png) 25 25, auto;
     }
 
     body:active {
-        cursor: url(./0510/dick2.png) 25 25, auto;
+        cursor: url(./0510/stick2.png) 25 25, auto;
     }
 </style>
 
@@ -109,7 +110,7 @@
 </body>
 <p style=text-align:center;><input type="button" value="開始打西瓜!" id="start"></p>
 
-<p id="time">剩餘時間:<span id="timeleft">60</span>秒<br><span>分數到達100分即可上車</span></p>
+<p id="time">剩餘時間:<span id="timeleft">60</span>秒<br><span>達100分即過關/span></p>
 <script>
     //開始按鈕
     let start = document.getElementById("start");
@@ -151,7 +152,7 @@
             score = 0;
             // 將開始按鈕啟用
             start.removeAttribute("disabled");
-            if(bg != "") document.body.style.backgroundImage = `url(./0510/${bg})`;
+            if(bg != "") document.body.style.backgroundImage = `url(./0510/beach.jpg)`;
             // 改回時間文字
             timeleft.innerText = 60;
             // 改回分數文字
@@ -199,13 +200,13 @@
                 score++;
                 scoreText.innerText = score;
             } else if (this.classList.contains("yellow")) {
-                document.body.style.backgroundImage = "url(./0510/Saint.gif)";
-               gamestop("0001153663.jpg");
+                document.body.style.backgroundImage = "url(./0510/sorry.jpg)";
+               gamestop("./0510/congratulations.jpg");
 
             }
 
             if (score >= 100) {
-                gamestop("0001153663.jpg");
+                gamestop("./0510/congratulations.jpg");
             }
         }
     }
